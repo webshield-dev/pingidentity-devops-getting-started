@@ -4,3 +4,5 @@
 #
 #########################################################
 
+kubesystem=kube-system
+user_namespace=$USER

@@ -69,7 +69,7 @@ metadata:
       app: pd-label
 spec:
   serviceName: pd-service-name
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: pd-label
@@ -100,9 +100,12 @@ spec:
         # args: ["start-server", "tail", "-f", "/dev/null"]
         imagePullPolicy: Always
         ports:
-        - containerPort: 636
-        - containerPort: 443
-        - containerPort: 389
+        - name: ldaps
+          containerPort: 636
+        - name: https
+          containerPort: 443
+        - name: ldap
+          containerPort: 389
         resources:
           requests:
             memory: "4Gi"

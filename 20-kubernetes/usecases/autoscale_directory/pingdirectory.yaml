@@ -94,26 +94,31 @@ spec:
       terminationGracePeriodSeconds: 300
       containers:
       - name: ds
-        image: 574076504146.dkr.ecr.us-east-2.amazonaws.com/terrysigle/pd73-test:edge
+        image: pingidentity/pingdirectory:edge
         imagePullPolicy: Always
         ports:
-        - containerPort: 636
-        - containerPort: 443
-        - containerPort: 389
+        - name: ldaps
+          containerPort: 636
+        - name: https
+          containerPort: 443
+        - name: ldap
+          containerPort: 389
         resources:
           requests:
             memory: "4Gi"
-            cpu: "1"
+            cpu: "0"
           limits:
             memory: "4Gi"
-            cpu: "1"
+            cpu: "0"
         env:
         - name: SERVER_PROFILE_URL
           value: "https://www.github.com/pingidentity/pingidentity-server-profiles.git"
         - name: SERVER_PROFILE_PATH
           value: "getting-started/pingdirectory"
-        - name: SERVER_PROFILE_BRANCH
-          value: "pd73"
+        - name: PING_IDENTITY_DEVOPS_USER
+          value: ${PING_IDENTITY_DEVOPS_USER}
+        - name: PING_IDENTITY_DEVOPS_KEY
+          value: ${PING_IDENTITY_DEVOPS_KEY}
         - name: ORCHESTRATION_TYPE
           value: kubernetes
         - name: K8S_STATEFUL_SET_NAME
@@ -123,7 +128,7 @@ spec:
         - name: TAIL_LOG_FILES
           value: ""
         - name: MAKELDIF_USERS
-          value: "1000"
+          value: "10000"
         - name: ENCRYPTION_PASSWORD_FILE
           value: "/opt/staging/pwd"
         volumeMounts:
