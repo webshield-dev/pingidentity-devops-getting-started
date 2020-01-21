@@ -1,0 +1,3 @@
+[submodule "docs/pingidentity-server-profiles"]
+	path = docs/pingidentity-server-profiles
+	url = https://github.com/pingidentity/pingidentity-server-profiles
