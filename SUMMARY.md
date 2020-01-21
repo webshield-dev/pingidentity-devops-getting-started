@@ -45,6 +45,8 @@
   * [Layering Profiles](docs/server-profiles/LAYERING_SERVER_PROFILES.md)
   * [Private GitHub Repos](docs/server-profiles/PRIVATE_REPOS.md)
   * [Message of the Day](motd/README.md)
+  * [Ping Identity Server Profiles](docs/pingidentity-server-profiles/README.md)
+    <!-- * [Getting-Started Profile](docs/pingidentity-server-profiles/getting-started/README.md) -->
   <!-- * [Getting Started](docs/server-profiles/GETTING_STARTED.md) -->
   <!-- * [Baseline](docs/server-profiles/BASELINE.md) -->
   <!-- * [Simple Sync](docs/server-profiles/SIMPLE_SYNC.md) -->
